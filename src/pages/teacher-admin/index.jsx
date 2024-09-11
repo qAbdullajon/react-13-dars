@@ -5,6 +5,8 @@ import { Modal } from "@components";
 const index = () => {
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
+  const [form, setForm] = useState({});
+  const [update, setUpdate] = useState(false);
   const getTeacher = () => {
     axios.get("http://localhost:3000/teachers/").then((res) => {
       if (res.status === 200) {
@@ -25,9 +27,31 @@ const index = () => {
   const addTeacher = () => {
     setOpen(true);
   };
+  const postTeacher = (user) => {
+    if (update) {
+      axios.put(`http://localhost:3000/teachers/${form.id}`, user).then((res) => {
+        if (res.status === 200) {
+          getTeacher();
+          setOpen();
+        }
+      });
+    } else {
+      axios.post(`http://localhost:3000/teachers/`, user).then((res) => {
+        if (res.status === 201) {
+          getTeacher();
+          setOpen(false);
+        }
+      });
+    }
+  };
+  const handleEdit = (item) => {
+    setForm(item);
+    setOpen(true);
+    setUpdate(true);
+  };
   return (
     <div>
-      <Modal open={open} toggle={setOpen} />
+      <Modal open={open} toggle={setOpen} postTeacher={postTeacher} form={form} setForm={setForm} setUpdate={setUpdate} />
       <div className="flex justify-between items-center">
         <h1 className="text-3xl">Teacher</h1>
         <button onClick={addTeacher} className="bg-blue-500 text-xl rounded px-8 py-1 text-white">
@@ -58,7 +82,14 @@ const index = () => {
                   <button onClick={() => handleDelet(item.id)} className="text-white px-3 mx-1 bg-red-500">
                     Delet
                   </button>
-                  <button className="text-white px-3 mx-1 bg-orange-500">Edit</button>
+                  <button
+                    onClick={() => {
+                      handleEdit(item);
+                    }}
+                    className="text-white px-3 mx-1 bg-orange-500"
+                  >
+                    Edit
+                  </button>
                 </td>
               </tr>
             );

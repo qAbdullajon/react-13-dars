@@ -1,3 +1,27 @@
 {
-  "teachers": []
+  "teachers": [
+    {
+      "name": "TEST",
+      "age": "123",
+      "number": "233",
+      "guruh": "a122",
+      "id": "5522"
+    }
+  ],
+  "studen": [
+    {
+      "name": "asas",
+      "age": "123",
+      "number": "+998 90 630 77 05",
+      "guruh": "a101",
+      "id": "1f33"
+    },
+    {
+      "id": "66d1",
+      "name": "asasas",
+      "age": "",
+      "number": "",
+      "guruh": ""
+    }
+  ]
 }
