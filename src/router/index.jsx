@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import App from "../App";
-import { SignIn, Admin, Student, StudentAdmin, TeacherAdmin } from "@pages";
+import { SignIn, Admin, Student, StudentAdmin, TeacherAdmin, CourseAdmin, GuruhAdmin } from "@pages";
 
 const index = () => {
   const router = createBrowserRouter(
@@ -11,8 +11,9 @@ const index = () => {
         <Route path="/admin" element={<Admin />}>
           <Route index element={<TeacherAdmin />} />
           <Route path="/admin/student" element={<StudentAdmin />} />
+          <Route path="/admin/guruh" element={<GuruhAdmin />} />
+          <Route path="/admin/course" element={<CourseAdmin />} />
         </Route>
-        <Route path="/student" element={<Student />}></Route>
       </Route>
     )
   );

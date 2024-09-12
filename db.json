@@ -1,11 +1,19 @@
 {
   "teachers": [
     {
-      "name": "TEST",
-      "age": "123",
-      "number": "233",
-      "guruh": "a122",
-      "id": "5522"
+      "name": "Temurbek",
+      "course": "Pythone",
+      "id": "c092"
+    },
+    {
+      "id": "72b4",
+      "name": "Dilshod",
+      "course": "React JS "
+    },
+    {
+      "id": "d12f",
+      "name": "Akmal",
+      "course": "SMM"
     }
   ],
   "studen": [
@@ -22,6 +30,44 @@
       "age": "",
       "number": "",
       "guruh": ""
+    }
+  ],
+  "course": [
+    {
+      "name": "Front end",
+      "duration": 24,
+      "price": 100,
+      "id": "1159"
+    },
+    {
+      "id": "106c",
+      "name": "Back end",
+      "duration": 25,
+      "price": 120
+    },
+    {
+      "id": "c2aa",
+      "name": "Pythone",
+      "duration": 20,
+      "price": 90
+    },
+    {
+      "id": "486f",
+      "name": "React JS ",
+      "duration": 7,
+      "price": 100
+    },
+    {
+      "id": "4203",
+      "name": "SMM",
+      "duration": 3,
+      "price": 50
+    },
+    {
+      "id": "63c8",
+      "name": "Dizain",
+      "duration": 4,
+      "price": 60
     }
   ]
 }

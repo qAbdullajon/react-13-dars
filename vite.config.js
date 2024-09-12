@@ -10,7 +10,8 @@ export default defineConfig({
       {find: "@", replacement: path.resolve('./src/')},
       {find: "@pages", replacement: path.resolve('./src/pages')},
       {find: "@components", replacement: path.resolve('./src/components')},
-      {find: "@layout", replacement: path.resolve('./src/layout')}
+      {find: "@layout", replacement: path.resolve('./src/layout')},
+      {find: "@validation", replacement: path.resolve('./src/utils/validation')},
     ]
   }
 })

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Modal } from "@components";
+import { TeacherModal } from "@components";
 
 const index = () => {
   const [data, setData] = useState([]);
@@ -51,7 +51,7 @@ const index = () => {
   };
   return (
     <div>
-      <Modal open={open} toggle={setOpen} postTeacher={postTeacher} form={form} setForm={setForm} setUpdate={setUpdate} />
+      <TeacherModal open={open} toggle={setOpen} postTeacher={postTeacher} form={form} setForm={setForm} setUpdate={setUpdate} />
       <div className="flex justify-between items-center">
         <h1 className="text-3xl">Teacher</h1>
         <button onClick={addTeacher} className="bg-blue-500 text-xl rounded px-8 py-1 text-white">
