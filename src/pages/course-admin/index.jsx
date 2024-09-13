@@ -50,7 +50,7 @@ const index = () => {
     <div>
       <CourseModal open={open} toggle={setOpen} postCourse={postCourse} form={form} setForm={setForm} update={update} setUpdate={setUpdate} putCurse={putCurse} />
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl">Teacher</h1>
+        <h1 className="text-3xl">Course</h1>
         <button onClick={() => setOpen(true)} className="bg-blue-500 text-xl rounded px-8 py-1 text-white">
           Add Course
         </button>

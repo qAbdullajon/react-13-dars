@@ -16,20 +16,27 @@
       "course": "SMM"
     }
   ],
-  "studen": [
+  "student": [
     {
-      "name": "asas",
-      "age": "123",
-      "number": "+998 90 630 77 05",
-      "guruh": "a101",
-      "id": "1f33"
+      "name": "Dilshod",
+      "age": "19",
+      "number": "+998 91 108 44 55",
+      "guruh": "N12",
+      "course": "React JS ",
+      "address": "Farg'ona viloyati",
+      "id": "3f05"
+    }
+  ],
+  "guruh": [
+    {
+      "name": "N12",
+      "course": "Pythone",
+      "id": "ad6f"
     },
     {
-      "id": "66d1",
-      "name": "asasas",
-      "age": "",
-      "number": "",
-      "guruh": ""
+      "name": "a12",
+      "course": "Front end",
+      "id": "df41"
     }
   ],
   "course": [
@@ -56,12 +63,6 @@
       "name": "React JS ",
       "duration": 7,
       "price": 100
-    },
-    {
-      "id": "4203",
-      "name": "SMM",
-      "duration": 3,
-      "price": 50
     },
     {
       "id": "63c8",

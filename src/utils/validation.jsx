@@ -14,6 +14,16 @@ const teacherValidationSchema = Yup.object().shape({
   course: Yup.string().required("Tanlov majburisy"),
 });
 
+// ============ Student ===========
+const studentValidationSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  age: Yup.string().required("Name is required"),
+  number: Yup.string().required("Name is required"),
+  guruh: Yup.string().required("Name is required"),
+  course: Yup.string().required("Name is required"),
+  address: Yup.string().required("Name is required"),
+});
+
 // ============ COURSE ===========
 const courseValidationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -21,4 +31,10 @@ const courseValidationSchema = Yup.object().shape({
   price: Yup.string().required("Name is required"),
 });
 
-export { signInValidationSchema, teacherValidationSchema, courseValidationSchema };
+// ============ GURUH ===========
+const guruhValidationSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  course: Yup.string().required("Name is required"),
+});
+
+export { signInValidationSchema, teacherValidationSchema, courseValidationSchema, guruhValidationSchema, studentValidationSchema };

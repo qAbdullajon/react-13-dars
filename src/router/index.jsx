@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import App from "../App";
-import { SignIn, Admin, Student, StudentAdmin, TeacherAdmin, CourseAdmin, GuruhAdmin } from "@pages";
+import { SignIn, Admin, StudentAdmin, TeacherAdmin, CourseAdmin, GuruhAdmin } from "@pages";
 
 const index = () => {
   const router = createBrowserRouter(

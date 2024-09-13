@@ -1,5 +1,7 @@
 import Menu from "./menu";
 import TeacherModal from "./teacher-modal";
 import CourseModal from "./course-modal";
+import GuruhModal from "./guruh-modal";
+import StudentModal from "./student-modal";
 
-export { Menu, TeacherModal, CourseModal };
+export { Menu, TeacherModal, CourseModal, GuruhModal, StudentModal };
