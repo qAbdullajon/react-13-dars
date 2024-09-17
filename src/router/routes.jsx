@@ -24,6 +24,11 @@ const admin = [
     path: "/admin/course",
     icon: <CastForEducationIcon />,
   },
+  {
+    counter: "Category",
+    path: "/admin/category",
+    icon: <CastForEducationIcon />,
+  },
 ];
 
 export { admin };

@@ -6,15 +6,19 @@ import { ToastContainer, toast } from "react-toastify";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import "react-toastify/dist/ReactToastify.css";
 import { signInValidationSchema } from "@validation";
+import axios from "axios";
 
 const index = () => {
   const naviget = useNavigate();
   const initialValues = {
-    name: "",
+    phone_number: "",
     password: "",
   };
   const handleSubmit = async (values) => {
-    if (values.name === "admin") {
+    const res = await axios.post("https://texnoark.ilyosbekdev.uz/auth/sign-in", values);
+    if (res.status === 201) {
+      const token = res.data.data.tokens.access_token;
+      localStorage.setItem("token", token);
       naviget("/admin");
     }
   };
@@ -28,20 +32,18 @@ const index = () => {
         </div>
         <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={signInValidationSchema}>
           <Form id="sign-in">
-            <Field name="name" as={TextField} type="text" margin="normal" variant="outlined" fullWidth helperText={<ErrorMessage name="name" component="p" className="text-[red] text-[15px]" />} label="Name"></Field>
+            <Field name="phone_number" as={TextField} type="text" margin="normal" variant="outlined" fullWidth helperText={<ErrorMessage name="phone_number" component="p" className="text-[red] text-[15px]" />} label="Phone number"></Field>
             <Field name="password" as={TextField} type="password" margin="normal" variant="outlined" fullWidth helperText={<ErrorMessage name="password" component="p" className="text-[red] text-[15px]" />} label="Password"></Field>
           </Form>
         </Formik>
-        {/* <form onSubmit={(e) => e.preventDefault()} id="form">
-          <TextField sx={{ marginBlock: "10px" }} fullWidth disabled={disabled} label="Username" name="username" id="fullWidth" onChange={handleChange} />
-          <TextField fullWidth disabled={disabled} label="Password" name="password" id="fullWidth" onChange={handleChange} />
-        </form> */}
-        <div>
+        <div className="flex items-center gap-3">
           <Button type="submit" form="sign-in" sx={{ marginTop: "10px" }} variant="contained">
             Sign In
           </Button>
+          <Button onClick={() => naviget("/sign-up")} sx={{ marginTop: "10px" }} variant="outlined">
+            Sign Up
+          </Button>
         </div>
-        {/* {count == 0 && <p>Kechirasiz ko'p xato qildingiz {timer}</p>} */}
       </div>
     </div>
   );
